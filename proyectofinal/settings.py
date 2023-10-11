@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'store'
+    'store.apps.StoreConfig'
 
 ]
 
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'proyectofinal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proyectofinal',
+        'HOST':'localhost',
+        'USER':'postgres',
+        'PASSWORD':'990906',
+        'PORT':'5432'
     }
 }
 
@@ -124,6 +128,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# REST AUTH CLASS
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+# AUTH USER MODEL DEFAULT
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
