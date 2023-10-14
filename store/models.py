@@ -1,12 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
+
 
 class Store(models.Model):
     name = models.CharField(max_length=255, unique=True)
     address = models.TextField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    def __str__(self):
+        return "Tienda: {}  Dueño: {}".format(self.name, self.owner)
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -24,7 +28,7 @@ class Order(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES)
 
