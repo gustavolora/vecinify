@@ -4,9 +4,8 @@ export const useForm = (valorInicial = {}) => {
 
     const [formState, setFormState] = useState(valorInicial)
 
-    const onChangeCampo = ({e}) =>{
-        const { name, value } = e.target
-        console.log(name, "---", value)
+    const onChangeCampo = ({target}) =>{
+        const { name, value } = target
         setFormState({
             ...formState,
             [name]: value

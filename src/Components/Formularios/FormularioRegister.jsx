@@ -9,17 +9,14 @@ export const FormularioRegister = () => {
     apellido: "",
     identificacion:   "",
     usuario: "",
-    confirmacionUsuario: "",
     password: "",
-    confirmacionPassword: "",
+    confirmacionPassword: ""
   }
   const [ categoria, setCategoria] = useState("")
   const [ checkbox, setCheckbox] = useState(false)
 
-  const { formState, onChageCampo} = useForm(valorInicial)
-  const { nombre, apellido, identificacion, usuario, confirmacionUsuario, password, confirmacionPassword} = formState
-
-  console.log("onchange--",onChageCampo)
+  const { formState, onChangeCampo} = useForm(valorInicial)
+  const { nombre, apellido, usuario, password, confirmacionPassword} = formState
   const onSubmit = (e) =>{
     e.preventDefault()
     console.log(formState)
@@ -29,17 +26,19 @@ export const FormularioRegister = () => {
     <>
         <StyleForm onSubmit={onSubmit}>
           <StyleLegend>Registrarse</StyleLegend>
-          <StyleCampoInput type="text" value={nombre} name='nombre' placeholder="Escriba su nombre" onChange={onChageCampo}/>
-          <StyleCampoInput type="text" value={apellido} name='apellido' placeholder="Escriba su apellido"  onChange={onChageCampo}/>
+          <StyleCampoInput type="text" value={nombre} name='nombre' placeholder="Escriba su nombre" onChange={onChangeCampo}/>
+          <StyleCampoInput type="text" value={apellido} name='apellido' placeholder="Escriba su apellido"  onChange={onChangeCampo}/>
           <ListaCategoria cambio={setCategoria}/>
-          <StyleCampoInput type="text" value={usuario} name='usuario' placeholder="Escriba su usuario"  onChange={onChageCampo}/>
-          <StyleCampoInput type="password" value={password} name='password' placeholder="Escriba su contraseña"  onChange={onChageCampo}/>
-          <StyleCampoInput type="password" value={confirmacionPassword} name='confirmacionPassword' placeholder="Confirmación de contraseña" onChange={onChageCampo}/>
+          <StyleCampoInput type="text" value={usuario} name='usuario' placeholder="Escriba su usuario"  onChange={onChangeCampo}/>
+          <StyleCampoInput type="password" value={password} name='password' placeholder="Escriba su contraseña"  onChange={onChangeCampo}/>
+          <StyleCampoInput type="password" value={confirmacionPassword} name='confirmacionPassword' placeholder="Confirmación de contraseña" onChange={onChangeCampo}/>
           <StyleCheckbox>
-            <input type='checkbox' onClick={(e)=> setCheckbox(e.target.checked)} onChange={onChageCampo}/>
+            <input type='checkbox' required onClick={(e)=> setCheckbox(e.target.checked)}/>
             <label >Acepta terminos y condiciones</label>
           </StyleCheckbox>
-          <StyleBtnSubmit>Registrarse</StyleBtnSubmit>
+          {
+            categoria === "Tienda"? <StyleBtnSubmit>Continuar</StyleBtnSubmit>: <StyleBtnSubmit>Registrarse</StyleBtnSubmit>
+          }
         </StyleForm>
     </>
   )

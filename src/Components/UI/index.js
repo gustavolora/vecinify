@@ -63,6 +63,7 @@ export const StyledListaCategoria = styled.select`
     width: 100%;
     height: 50px;
     border: none;
+    outline: none;
     border-bottom: 1px solid #cccccc;
 `
 
