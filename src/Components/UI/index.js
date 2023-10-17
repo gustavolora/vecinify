@@ -75,6 +75,17 @@ export const StyleCheckbox = styled.div`
     margin-bottom: 15px;
 
 `
+export const StyleBtn = styled.a`
+    background: #59B1EA;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    width: 100%;
+`
 export const StyleBtnSubmit = styled.button`
     background: #59B1EA;
     color: white;

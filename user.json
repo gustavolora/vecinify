@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "password": "1998",
+      "username": "juan78",
+      "first_name": "Juan",
+      "last_name": "Macias",
+      "email": "jdmg8610@hotmail.com",
+      "groups": [
+        {
+          "name": "Repartidor"
+        }
+      ],
+      "user_permissions": [],
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-10-16T21:28:43.523Z",
+      "id": 1
+    },
+    {
+      "password": "1998",
+      "username": "juan135",
+      "first_name": "Juan",
+      "last_name": "Macias",
+      "email": "jdmg8610@hotmail.com",
+      "groups": [
+        {
+          "name": "Cliente"
+        }
+      ],
+      "user_permissions": [],
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-10-16T21:29:07.595Z",
+      "id": 2
+    }
+  ]
+}
