@@ -12,7 +12,7 @@ class StoreSerializer(serializers.ModelSerializer):
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password')
+        fields = ('username', 'email', 'password','first_name','last_name','date_joined')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
