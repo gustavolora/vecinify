@@ -3,12 +3,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework import viewsets
-from .serializers import StoreSerializer, ProductSerializers, DeliveryPersonSerializer, OrderHistorySerializer, UserSerializer
+from .serializers import StoreSerializer, ProductSerializers, DeliveryPersonSerializer,UserRegistrationSerializer, OrderHistorySerializer, UserSerializer
 from .models import Store, Product, DeliveryPerson, OrderHistory
 from django.contrib.auth.models import User
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
+from rest_framework import generics
 from rest_framework import status
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 class CustomLoginView(ObtainAuthToken):
@@ -36,9 +39,15 @@ class StoreView(viewsets.ModelViewSet):
 
 
 class ProductView(viewsets.ModelViewSet):
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
     serializer_class = ProductSerializers
     queryset = Product.objects.all()
+    http_method_names = ['put', 'patch', 'post', 'delete']
 
+class UserRegistrationView(generics.CreateAPIView):
+    serializer_class = UserRegistrationSerializer
+    queryset = User.objects.all()
 
 class DeliveryPersonView(viewsets.ModelViewSet):
     serializer_class = DeliveryPersonSerializer
