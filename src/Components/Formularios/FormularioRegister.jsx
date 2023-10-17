@@ -30,6 +30,17 @@ export const FormularioRegister = () => {
     }
   }
 
+  const users = async () =>{
+    const response = await fetch("http://127.0.0.1:8000/api/v1/User/")
+    const data = await response.json()
+
+    console.log(data)
+  }
+
+  useEffect(()=>{
+    users()
+  },[])
+
 
   return (
     <>

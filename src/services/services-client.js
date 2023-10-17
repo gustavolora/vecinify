@@ -1,5 +1,5 @@
 const Registrar = (nombre, apellido, email, usuario, password, categoria, fechaRegistro) => {
-    return fetch("http://localhost:3000/user", {
+    return fetch("http://127.0.0.1:8000/api/v1/User/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
@@ -15,10 +15,11 @@ const Registrar = (nombre, apellido, email, usuario, password, categoria, fechaR
                     }
                 ],
                 user_permissions: [],
-                is_superuser: true,
-                is_staff: true,
+                is_superuser: false,
+                is_staff: false,
                 is_active: true,
                 date_joined: fechaRegistro,
+                last_login: fechaRegistro
             }
         )
     })
