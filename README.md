@@ -52,8 +52,8 @@
 ## Tecnologías utilizadas:
 - ## Lenguajes de Programación:
 
-   * ### Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" style="width: 55px;" alt="Python"/>
-   * ### JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" style="width: 55px;" alt="Js" />
+   * #### Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" style="width: 55px;" alt="Python"/>
+   * #### JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" style="width: 55px;" alt="Js" />
 
 - ## Tecnologías Frontend:
   * #### Framework Fontend: React  <img src="https://img.shields.io/badge/react-%2320232a.svg?&logo=react&logoColor=%2361DAFB" style="width: 55px;" alt="React"/>
