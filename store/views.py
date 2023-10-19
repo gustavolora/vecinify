@@ -17,7 +17,6 @@ from rest_framework.permissions import IsAuthenticated
 class CustomLoginView(ObtainAuthToken):
 
     def post(self, request, *args, **kwargs):
-        # Realiza la autenticación del usuario
         serializer = self.serializer_class(
             data=request.data, context={'request': request})
         if serializer.is_valid():
@@ -27,7 +26,6 @@ class CustomLoginView(ObtainAuthToken):
         return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-# añadiendo vistas para los serializadores
 class UserView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -57,3 +55,6 @@ class DeliveryPersonView(viewsets.ModelViewSet):
 class OrderHistoryView(viewsets.ModelViewSet):
     serializer_class = OrderHistorySerializer
     queryset = OrderHistory.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
