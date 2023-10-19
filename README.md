@@ -52,12 +52,13 @@
 ## Tecnologías utilizadas:
 - ## Lenguajes de Programación:
 
-   * ### Los principales lenguajes de programacion usados para el proyecto fueron Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" style="width: 55px;" alt="Python"/> y JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" style="width: 55px;" alt="Js" />
+   * ### Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" style="width: 55px;" alt="Python"/>
+   * ### JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" style="width: 55px;" alt="Js" />
 
 - ## Tecnologías Frontend:
   * #### Framework Fontend: React  <img src="https://img.shields.io/badge/react-%2320232a.svg?&logo=react&logoColor=%2361DAFB" style="width: 55px;" alt="React"/>
-  * #### Librerías de diseño: Styled Components <img src="https://img.shields.io/badge/styled--components-DB7093?&logo=styled-components&logoColor=white" style="width: 70px;" alt="React"/>
-  * ####  Herramientas de construcción: React Router Dom  <img src="https://img.shields.io/badge/React_Router-CA4245?&logo=react-router&logoColor=white" style="width: 55px;" alt="React"/>
+  * #### Librerías de diseño: Styled Components <img src="https://img.shields.io/badge/styled--components-DB7093?&logo=styled-components&logoColor=white" alt="React"/>
+  * ####  Herramientas de construcción: React Router Dom  <img src="https://img.shields.io/badge/React_Router-CA4245?&logo=react-router&logoColor=white" style="width: 80px;" alt="React"/>
   
 - ## Tecnologías Back-End:
   *  ### Servidor Web Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" style="width: 55px;" alt="Python"/>
