@@ -38,6 +38,7 @@ class StoreView(viewsets.ModelViewSet):
     queryset = Store.objects.all()
 
 
+
 class ProductView(viewsets.ModelViewSet):
     authentication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticated]
