@@ -61,21 +61,30 @@
   * ####  Herramientas de construcción: React Router Dom  <img src="https://img.shields.io/badge/React_Router-CA4245?&logo=react-router&logoColor=white" alt="RRD"/>
   
 - ## Tecnologías Back-End:
-  *  ### Servidor Proxy Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" alt="Nginx"/>
+  * ### Servidor Proxy Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" alt="Nginx"/>
   * ### Frameworks Backend: Django <img src="https://img.shields.io/badge/django-%23092E20.svg?logo=django&logoColor=white" alt="Django"/>
-  * ### Framwwork API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray"  alt="DRF"/>
+  * ### Framework API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray" alt="DRF"/>
   * ### Bases de Datos: PostgresSql <img src="https://img.shields.io/badge/postgres-%23316192.svg?&logo=postgresql&logoColor=white"  alt="PostgreSql"/>
-  *  ### Servidor HTTP WSGI:  Gunicorn <img src="https://img.shields.io/badge/gunicorn-%298729.svg?&logo=gunicorn&logoColor=white"  alt="Gunicorn"/>
+  * ### Servidor HTTP WSGI:  Gunicorn <img src="https://img.shields.io/badge/gunicorn-%298729.svg?&logo=gunicorn&logoColor=white"  alt="Gunicorn"/>
   * ### Control de procesos: Supervisor ctl <img src="https://img.shields.io/badge/supervisor-ctl-%234E82C2?&logo=supervisor-ctl" alt="Supervisorctl"/>
+  * ### Certificado SSL: Let's Encrypt <img src="https://img.shields.io/badge/Let's%20Encrypt-%E2%9C%93-green" alt="LE"/>
+  * ### Bot de automatizacion de Certificados: Cerbot <img src="https://img.shields.io/badge/Certbot-%E2%9C%93-green" alt="CertBot"/>
 
 - ## Herramientas de Desarrollo:
   * ### Visual studio code  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?&logo=visual-studio-code&logoColor=white" alt="VsCode"/>
   * ### PgAdmin <img src="https://img.shields.io/badge/PgAdmin-%234E82C2?&logo=pgadmin&logoColor=white" alt="Python"/> 
   * ### Navegador web Brave: <img src="https://img.shields.io/badge/Brave-FB542B?&logo=Brave&logoColor=white" alt="Brave"/>
-
+  
+- ## Sistema de Control de Versiones
+  * ### Alojamiento de codigo: Github <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Git"/>
+  * ### control de versiones: Git <img src="https://img.shields.io/badge/Git-%23F05032.svg?logo=git&logoColor=white" style="width: 45px" alt="git"/>
+    
 - ## Infraestructura y Alojamiento:
-  * ### Infraestructura SAAS: DigitalOcean   <img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?&logo=digitalOcean&logoColor=white" alt="Python"/>
-   * ### Imagen de disco: Ubuntu 20.04  <img src="https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white" alt="Python"/>
+  * ### Infraestructura SAAS: DigitalOcean   <img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?&logo=digitalOcean&logoColor=white" alt="Digitalocean"/>
+   * ### Imagen de disco: Ubuntu 20.04  <img src="https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white" alt="Ubuntu"/>
+
+# Documentacion de la API:
+  * ### Puedes visitar el siguiente enlace para consultar la documentacion de nuestra api [api.vecinify.shop/docs](https://api.vecinify.shop/docs)  
    
 
 
