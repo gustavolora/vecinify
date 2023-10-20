@@ -6,8 +6,12 @@ store/migrations/__pycache__/
 *.sqlite3
 /.vscode
 .vscode/
-requirements.txt
-.\requirements.txt
+*.png
+*.jpg
+media/delivery_persons
+media/products
+
+
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

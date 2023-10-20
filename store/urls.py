@@ -13,6 +13,8 @@ router.register('Product', views.ProductView)
 router.register('DeliveryPerson', views.DeliveryPersonView)
 router.register('OrderHistory', views.OrderHistoryView)
 router.register('User', views.UserView)
+router.register('Order',views.OrderView)
+router.register('DeliveryHistory',views.DeliveryHistoryView)
 
 urlpatterns = [
         path('api/v1/',include(router.urls), name="api-v1"),
