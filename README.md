@@ -52,30 +52,29 @@
 ## Tecnologías utilizadas:
 - ## Lenguajes de Programación:
 
-   * #### Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" style="width: 55px;" alt="Python"/>
-   * #### JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" style="width: 55px;" alt="Js" />
+   * #### Python <img src="https://img.shields.io/badge/python-3670A0?&logo=python&logoColor=ffdd54" alt="Python"/>
+   * #### JavaScript <img src="https://img.shields.io/badge/javascript-%23323330.svg?&logo=javascript&logoColor=%23F7DF1E" alt="Js" />
 
 - ## Tecnologías Frontend:
-  * #### Framework Fontend: React  <img src="https://img.shields.io/badge/react-%2320232a.svg?&logo=react&logoColor=%2361DAFB" style="width: 55px;" alt="React"/>
-  * #### Librerías de diseño: Styled Components <img src="https://img.shields.io/badge/styled--components-DB7093?&logo=styled-components&logoColor=white" alt="React"/>
-  * ####  Herramientas de construcción: React Router Dom  <img src="https://img.shields.io/badge/React_Router-CA4245?&logo=react-router&logoColor=white" style="width: 80px;" alt="React"/>
+  * #### Framework Fontend: React  <img src="https://img.shields.io/badge/react-%2320232a.svg?&logo=react&logoColor=%2361DAFB" alt="React"/>
+  * #### Librerías de diseño: Styled Components <img src="https://img.shields.io/badge/styled--components-DB7093?&logo=styled-components&logoColor=white" alt="SC"/>
+  * ####  Herramientas de construcción: React Router Dom  <img src="https://img.shields.io/badge/React_Router-CA4245?&logo=react-router&logoColor=white" alt="RRD"/>
   
 - ## Tecnologías Back-End:
-  *  ### Servidor Web Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" style="width: 55px;" alt="Python"/>
-  * ### Bases de datos: PostgreSQL. <img src="https://img.shields.io/badge/postgres-%23316192.svg?&logo=postgresql&logoColor=white" style="width: 55px;" alt="Python"/>
-  * ### Frameworks de servidor: Django <img src="https://img.shields.io/badge/django-%23092E20.svg?logo=django&logoColor=white" style="width: 55px;" alt="Python"/>
-  * ### Servidor  API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray" style="width: 55px;" alt="Python"/>
-  * ### Bases de Datos: PostgresSql <img src="https://img.shields.io/badge/postgres-%23316192.svg?&logo=postgresql&logoColor=white" style="width: 55px;" alt="Python"/>
-  *  ### Servidor WSGI:  Gunicorn <img src="https://img.shields.io/badge/gunicorn-%298729.svg?&logo=gunicorn&logoColor=white" style="width: 55px;" alt="Python"/>
-  * ### Control de procesos: Supervisor ctl
+  *  ### Servidor Proxy Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" alt="Nginx"/>
+  * ### Frameworks Backend: Django <img src="https://img.shields.io/badge/django-%23092E20.svg?logo=django&logoColor=white" alt="Django"/>
+  * ### Framwwork API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray" style="width: 55px;" alt="DRF"/>
+  * ### Bases de Datos: PostgresSql <img src="https://img.shields.io/badge/postgres-%23316192.svg?&logo=postgresql&logoColor=white"  alt="PostgreSql"/>
+  *  ### Servidor HTTP WSGI:  Gunicorn <img src="https://img.shields.io/badge/gunicorn-%298729.svg?&logo=gunicorn&logoColor=white"  alt="Gunicorn"/>
+  * ### Control de procesos: Supervisor ctl <img src="https://img.shields.io/badge/supervisor-ctl-%234E82C2?&logo=supervisor-ctl" alt="Supervisorctl"/>
 
 - ## Herramientas de Desarrollo:
-  * ### Visual studio code  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?&logo=visual-studio-code&logoColor=white" style="width: 55px;" alt="Python"/>
-  * ### PgAdmin
-  * ### Navegador web Brave: <img src="https://img.shields.io/badge/Brave-FB542B?&logo=Brave&logoColor=white" style="width: 55px;" alt="Python"/>
+  * ### Visual studio code  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?&logo=visual-studio-code&logoColor=white" alt="VsCode"/>
+  * ### PgAdmin <img src="https://img.shields.io/badge/PgAdmin-%234E82C2?&logo=pgadmin&logoColor=white" alt="Python"/> 
+  * ### Navegador web Brave: <img src="https://img.shields.io/badge/Brave-FB542B?&logo=Brave&logoColor=white" alt="Brave"/>
 
 - ## Infraestructura y Alojamiento:
-  * ### Infraestructura SAAS: DigitalOcean   <img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?&logo=digitalOcean&logoColor=white" style="width: 55px;" alt="Python"/>
+  * ### Infraestructura SAAS: DigitalOcean   <img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?&logo=digitalOcean&logoColor=white" alt="Python"/>
    * ### Imagen de disco: Ubuntu 20.04  <img src="https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white" style="width: 55px;" alt="Python"/>
    
 
