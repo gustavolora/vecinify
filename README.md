@@ -63,7 +63,7 @@
 - ## Tecnologías Back-End:
   *  ### Servidor Proxy Reverso: Nginx <img src="https://img.shields.io/badge/nginx-%23009639.svg?&logo=nginx&logoColor=white" alt="Nginx"/>
   * ### Frameworks Backend: Django <img src="https://img.shields.io/badge/django-%23092E20.svg?logo=django&logoColor=white" alt="Django"/>
-  * ### Framwwork API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray" style="width: 55px;" alt="DRF"/>
+  * ### Framwwork API: Django Rest Framework <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?&logo=django&logoColor=white&color=ff1709&labelColor=gray"  alt="DRF"/>
   * ### Bases de Datos: PostgresSql <img src="https://img.shields.io/badge/postgres-%23316192.svg?&logo=postgresql&logoColor=white"  alt="PostgreSql"/>
   *  ### Servidor HTTP WSGI:  Gunicorn <img src="https://img.shields.io/badge/gunicorn-%298729.svg?&logo=gunicorn&logoColor=white"  alt="Gunicorn"/>
   * ### Control de procesos: Supervisor ctl <img src="https://img.shields.io/badge/supervisor-ctl-%234E82C2?&logo=supervisor-ctl" alt="Supervisorctl"/>
@@ -75,7 +75,7 @@
 
 - ## Infraestructura y Alojamiento:
   * ### Infraestructura SAAS: DigitalOcean   <img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?&logo=digitalOcean&logoColor=white" alt="Python"/>
-   * ### Imagen de disco: Ubuntu 20.04  <img src="https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white" style="width: 55px;" alt="Python"/>
+   * ### Imagen de disco: Ubuntu 20.04  <img src="https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white" alt="Python"/>
    
 
 
