@@ -1,5 +1,5 @@
-import React, { useEffect,  useEffect, useState  } from 'react'
-import { StyleForm,  StyleSpan, StyleBtnSubmit, StyleLegend, StyleCheckbox, StyleCampoInput, StyleBtn, StyleBtn } from '../UI'
+import React, { useEffect, useState  } from 'react'
+import { StyleForm,  StyleSpan, StyleBtnSubmit, StyleLegend, StyleCheckbox, StyleCampoInput, StyleBtn } from '../UI'
 import { ListaCategoria } from './ListaCategoria'
 import { useForm } from '../../Hooks/useForm'
 
