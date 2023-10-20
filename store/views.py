@@ -173,6 +173,7 @@ class StoreView(viewsets.ModelViewSet):
     http_method_names = ['get', 'patch', 'post', 'put']
 
 
+
 class ProductView(viewsets.ModelViewSet):
     """
     Vista para gestionar productos.

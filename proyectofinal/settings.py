@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'proyectofinal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'proyectofinal',
+        'NAME': 'postgres',
         'HOST':'localhost',
         'USER':'postgres',
-        'PASSWORD':'990906',
+        'PASSWORD':'3126114451',
         'PORT':'5432'
     }
 }
@@ -119,8 +119,8 @@ REST_FRAMEWORK = {
 
 # CORS HEADERS 
 CORS_ALLOWED_ORIGINS = [
-
-    
+ 
+    "http://localhost:3000",
 
 ]
 
