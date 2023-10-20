@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'proyectofinal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'vecinify',
         'HOST':'localhost',
-        'USER':'postgres',
-        'PASSWORD':'3126114451',
+        'USER':'vecinifyuser',
+        'PASSWORD':'34R_ps62wJ,2k£-',
         'PORT':'5432'
     }
 }
