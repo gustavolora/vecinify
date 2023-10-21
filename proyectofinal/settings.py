@@ -88,7 +88,7 @@ CSRF_COOKIE_HTTPONLY = True
 
 CORS_ALLOW_ALL_ORIGINS = False
 
-CSRF_TRUSTED_ORIGINS = ['https://vecinify.shop']
+CSRF_TRUSTED_ORIGINS = ['https://api.vecinify.shop']
 
 
 # Database
