@@ -11,9 +11,29 @@ const StyleBaner = styled.div`
     max-width: 1330px;
     width: 100%;
 `
-const StyleImgBanner = styled.img`
+const StyleImgBannerMovil = styled.img`
+    width: 100%;
+    border-radius: 5px;
+    @media (min-width: 480px){
+        display: none;
+    }
+`
+const StyleImgBannerTablet = styled.img`
     width: 300px;
     border-radius: 5px;
+    @media (min-width: 1000px){
+        display: none;
+    }
+    @media (max-width: 480px){
+        display: none;
+    }
+`
+const StyleImgBannerPc = styled.img`
+    width: 300px;
+    border-radius: 5px;
+    @media (max-width: 1001px){
+        display: none;
+    }
 `
 
 export const Banner = () => {
@@ -21,10 +41,13 @@ export const Banner = () => {
     return (
         <>
             <StyleBaner>
-                <StyleImgBanner src={imgCocaCola}/>
-                <StyleImgBanner src={imgCocaCola}/>
-                <StyleImgBanner src={imgCocaCola}/>
-                <StyleImgBanner src={imgCocaCola}/>
+                <StyleImgBannerMovil src={imgCocaCola}/>
+                <StyleImgBannerTablet src={imgCocaCola}/>
+                <StyleImgBannerTablet src={imgCocaCola}/>
+                <StyleImgBannerPc src={imgCocaCola}/>
+                <StyleImgBannerPc src={imgCocaCola}/>
+                <StyleImgBannerPc src={imgCocaCola}/>
+                
             </StyleBaner>
         </>
     )

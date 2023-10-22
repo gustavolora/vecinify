@@ -1,4 +1,4 @@
-const Registrar = (nombre, apellido, email, usuario, password, categoria, fechaRegistro) => {
+const Registrar = (nombre, apellido, email, usuario, password, categoria, ) => {
     return fetch("http://localhost:3000/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -8,25 +8,14 @@ const Registrar = (nombre, apellido, email, usuario, password, categoria, fechaR
                 username: usuario,
                 first_name: nombre,
                 last_name: apellido,
-                email: email,
-                groups: [
-                    {
-                        name: categoria
-                    }
-                ],
-                user_permissions: [],
-                is_superuser: false,
-                is_staff: false,
-                is_active: true,
-                date_joined: fechaRegistro,
-                last_login: fechaRegistro
+                email: email
             }
         )
     })
 }
 
 const Login = async ()=>{
-    return await fetch("http://localhost:3000/user").then((respuesta) => respuesta.json())
+    return await fetch("https://fakestoreapi.com/users").then((respuesta) => respuesta.json())
 }
 
 export const clientServices = {

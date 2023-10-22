@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
-import { StyleHeader, StyledHeaderInfo, StyleImgLogo, StyleLoginRegister, StyleUl, StyledLi, StyledA, StyledHeaderNav, StyleLogo, Btn, StyleImg, StyleCar, StyleCajaBuscar, StyleInputSearch } from '../UI/StyleHeader.js'
+import React, { useContext, useState } from 'react'
+import { StyleHeader, StyledHeaderInfo, StyleImgLogo, StyleCount, StyleIconoCarro, StyleLoginRegister, StyleUl, StyledLi, StyledA, StyledHeaderNav, StyleLogo, Btn, StyleImg, StyleCar, StyleCajaBuscar, StyleInputSearch } from '../UI/StyleHeader.js'
 import carrito from '../../Assets/img/cart.png'
 import search from '../../Assets/img/search.png'
 import user from '../../Assets/img/user.png'
 import imgLogo from '../../Assets/img/logoVecinify.png'
 import { CarroCompra } from '../CarroCompra/CarroCompra.jsx'
+import { StyleNavLink } from '../UI/index.js'
+import { CarroComprasContext } from '../../Context/CarroComprasContext.jsx'
+
 
 
 export const Header = () => {
 
     const [compras, setCompras] = useState(false)
+    const {listaCompra} = useContext(CarroComprasContext)
 
     const mostrarCompra = () => {
         setCompras(!compras)
@@ -26,23 +30,27 @@ export const Header = () => {
                         <StyleInputSearch placeholder='¿Qué estás buscando?' type="search" />
                         <StyleImg src={search} />
                     </StyleCajaBuscar>
+
                     <StyleCar>
                         <StyleImg src={user} />
-                        <StyleLoginRegister>
-                            <Btn href='/login'><strong>¡Hola! Inicia sesión</strong><br /> o puedes registarte</Btn>
-                        </StyleLoginRegister>
-                        <StyleImg onClick={mostrarCompra} src={carrito} />
+                        <StyleNavLink to='/login'>
+                            <Btn><strong>¡Hola! Inicia sesión</strong><br /> o puedes registarte</Btn>
+                        </StyleNavLink>
+                        <StyleIconoCarro to='/carroCompras'>
+                            <StyleCount>{listaCompra.length}</StyleCount>
+                            <StyleImg src={carrito} />
+                        </StyleIconoCarro>
 
                     </StyleCar>
                 </StyledHeaderInfo>
 
                 <StyledHeaderNav>
                     <StyleUl>
-                        <StyledLi><StyledA href='/'>inicio</StyledA></StyledLi>
-                        <StyledLi><StyledA>Quines somos</StyledA></StyledLi>
-                        <StyledLi><StyledA>Tiendas</StyledA></StyledLi>
-                        <StyledLi><StyledA>Productos</StyledA></StyledLi>
-                        <StyledLi><StyledA>Catalogo</StyledA></StyledLi>
+                        <StyledLi><StyleNavLink to='/'>inicio</StyleNavLink></StyledLi>
+                        <StyledLi><StyleNavLink to='/quienesSomos'>Quines somos</StyleNavLink></StyledLi>
+                        <StyledLi><StyleNavLink>Tiendas</StyleNavLink></StyledLi>
+                        <StyledLi><StyleNavLink>Productos</StyleNavLink></StyledLi>
+                        <StyledLi><StyleNavLink>Catalogo</StyleNavLink></StyledLi>
                     </StyleUl>
                 </StyledHeaderNav>
 

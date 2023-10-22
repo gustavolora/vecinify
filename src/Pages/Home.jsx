@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '../Components/Header/Header'
 import { Banner } from '../Components/Banner/Banner'
 import styled from 'styled-components'
 import { Productos } from '../Components/Productos/Productos'
@@ -14,12 +13,10 @@ const StyleContent = styled.div`
 export const Home = () => {
     return (
         <>
-            <Header></Header>
-            <StyleContent>
+            {<StyleContent>
                 <Banner></Banner>
                 <Productos></Productos>
-            </StyleContent>
-
+            </StyleContent>}
         </>
     )
 }
