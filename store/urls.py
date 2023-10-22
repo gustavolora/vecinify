@@ -18,7 +18,7 @@ router.register('DeliveryHistory',views.DeliveryHistoryView)
 
 urlpatterns = [
         path('api/v1/',include(router.urls), name="api-v1"),
-        path('docs/', include_docs_urls(title="Vecinify API")),
+        path('docs/', include_docs_urls(title="Vecinify API"), name='docs'),
         path('api/registro/', UserRegistrationView.as_view(), name='registro'),
         path('api/login', CustomLoginView.as_view(), name='login'),
 

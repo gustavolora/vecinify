@@ -1,5 +1,7 @@
+from django.shortcuts import render
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
+from django.views.generic import TemplateView
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.authtoken.models import Token
@@ -14,6 +16,27 @@ from rest_framework import status
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django.utils import timezone
+
+
+
+
+
+# Handler error for 404 and 500 error
+def handler404notfound(request, exc):
+    return render(request, '404.html' ,{'exception':exc }, status=404)
+
+class Handler500view(TemplateView):
+    template_name = "500.html"
+
+    @classmethod
+    def as_error_view(cls):
+
+        v = cls.as_view()
+        def view(request):
+            r = v(request)
+            r.render()
+            return r
+        return view
 
 
 
@@ -150,11 +173,11 @@ class UserView(viewsets.ModelViewSet):
     Métodos permitidos:
     - GET: Obtener la lista de usuarios.
     - POST: Crear un nuevo usuario.
-    - PUT/PATCH: Actualizar un usuario existente.
+    - PUTusuario existente.
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    http_method_names = ['get', 'patch', 'post', 'put']
+    http_method_names = ['get', 'patch', 'put']
 
 
 class StoreView(viewsets.ModelViewSet):
