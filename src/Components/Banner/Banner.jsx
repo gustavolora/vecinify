@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 import imgCocaCola from '../../Assets/img/banner/cocaCola.jpg'
+import imgLacteos from '../../Assets/img/banner/productos-lacteos.jpeg'
+import imgGranos from '../../Assets/img/banner/baner-granos.jpg'
+import imgEnlatados from '../../Assets/img/banner/baner-enlatados.jpg'
 
 
 const StyleBaner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px 0;
     max-width: 1330px;
     width: 100%;
 `
 const StyleImgBannerMovil = styled.img`
     width: 100%;
     border-radius: 5px;
+    height: 200px;
     @media (min-width: 480px){
         display: none;
     }
@@ -21,6 +24,8 @@ const StyleImgBannerMovil = styled.img`
 const StyleImgBannerTablet = styled.img`
     width: 300px;
     border-radius: 5px;
+    height: 200px;
+    margin-top: 20px;
     @media (min-width: 1000px){
         display: none;
     }
@@ -30,7 +35,9 @@ const StyleImgBannerTablet = styled.img`
 `
 const StyleImgBannerPc = styled.img`
     width: 300px;
+    height: 200px;
     border-radius: 5px;
+    margin-top: 20px;
     @media (max-width: 1001px){
         display: none;
     }
@@ -41,12 +48,12 @@ export const Banner = () => {
     return (
         <>
             <StyleBaner>
-                <StyleImgBannerMovil src={imgCocaCola}/>
-                <StyleImgBannerTablet src={imgCocaCola}/>
-                <StyleImgBannerTablet src={imgCocaCola}/>
-                <StyleImgBannerPc src={imgCocaCola}/>
-                <StyleImgBannerPc src={imgCocaCola}/>
-                <StyleImgBannerPc src={imgCocaCola}/>
+                <StyleImgBannerMovil src={imgGranos}/>
+                <StyleImgBannerTablet src={imgGranos}/>
+                <StyleImgBannerTablet src={imgLacteos}/>
+                <StyleImgBannerPc src={imgEnlatados}/>
+                <StyleImgBannerPc src={imgLacteos}/>
+                <StyleImgBannerPc src={imgGranos}/>
                 
             </StyleBaner>
         </>

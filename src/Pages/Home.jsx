@@ -13,10 +13,10 @@ const StyleContent = styled.div`
 export const Home = () => {
     return (
         <>
-            {<StyleContent>
+            <StyleContent>
                 <Banner></Banner>
                 <Productos></Productos>
-            </StyleContent>}
+            </StyleContent>
         </>
     )
 }

@@ -12,6 +12,7 @@ export const Productos = () => {
 
     const { productos } = useContext(ProductosContext)
     const { listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
+    const [lista, setLista] = useState([])
 
     const [items, setItems] = useState([])
 
@@ -20,11 +21,22 @@ export const Productos = () => {
         setItems(limiteProductos)
     }, [])
 
+    // const productosGet = async () => {
+    //     const response = await fetch("https://api.vecinify.shop/api/v1/Product/")
+    //     const data = await response.json()
+    //     console.log(data)
+    //     setLista(data)
+    // }
+    // useEffect(()=>{
+    //     productosGet()
+    // },[])
+
     const handleAgregar = (compra) => {
         agregarProducto(compra)
     }
     const handleEliminar = (id) => {
         eliminarProducto(id)
+
     }
     return (
         <>

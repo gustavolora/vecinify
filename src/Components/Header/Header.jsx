@@ -13,7 +13,7 @@ import { CarroComprasContext } from '../../Context/CarroComprasContext.jsx'
 export const Header = () => {
 
     const [compras, setCompras] = useState(false)
-    const {listaCompra} = useContext(CarroComprasContext)
+    const { listaCompra } = useContext(CarroComprasContext)
 
     const mostrarCompra = () => {
         setCompras(!compras)
@@ -47,10 +47,8 @@ export const Header = () => {
                 <StyledHeaderNav>
                     <StyleUl>
                         <StyledLi><StyleNavLink to='/'>inicio</StyleNavLink></StyledLi>
-                        <StyledLi><StyleNavLink to='/quienesSomos'>Quines somos</StyleNavLink></StyledLi>
                         <StyledLi><StyleNavLink>Tiendas</StyleNavLink></StyledLi>
                         <StyledLi><StyleNavLink to='/productos'>Productos</StyleNavLink></StyledLi>
-                        <StyledLi><StyleNavLink>Catalogo</StyleNavLink></StyledLi>
                     </StyleUl>
                 </StyledHeaderNav>
 
