@@ -62,7 +62,7 @@ ROOT_URLCONF = 'proyectofinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/"store/templates"],
+        'DIRS': [BASE_DIR/'store/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,6 +138,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://www.vecinify.shop",
     "https://vecinify.shop",
 ]
+
+
+# SSL FOR DJANGO
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
