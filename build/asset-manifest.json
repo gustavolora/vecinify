@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.ace9898c.css",
-    "main.js": "/static/js/main.8d3a0d31.js",
+    "main.js": "/static/js/main.1db2751a.js",
     "static/js/787.41f12221.chunk.js": "/static/js/787.41f12221.chunk.js",
-    "static/media/baner-granos.jpg": "/static/media/baner-granos.d7643293c2ff2f7db2ab.jpg",
-    "static/media/baner-enlatados.jpg": "/static/media/baner-enlatados.92c7cd50fe40c0f2872e.jpg",
+    "static/media/baner-granos.png": "/static/media/baner-granos.f682205d63a6e44ebe15.png",
+    "static/media/baner-enlatados.png": "/static/media/baner-enlatados.668c883929016d60fff9.png",
     "static/media/productos-lacteos.jpeg": "/static/media/productos-lacteos.c3404bfd7e8586665276.jpeg",
-    "static/media/cocaCola.jpg": "/static/media/cocaCola.cd5ce5169bd0d5e85a97.jpg",
     "static/media/logoVecinify.png": "/static/media/logoVecinify.3aea4c8c2d36fd644daa.png",
     "static/media/buchanans.jpg": "/static/media/buchanans.3a48b3866209b90fc717.jpg",
     "index.html": "/index.html",
     "main.ace9898c.css.map": "/static/css/main.ace9898c.css.map",
-    "main.8d3a0d31.js.map": "/static/js/main.8d3a0d31.js.map",
+    "main.1db2751a.js.map": "/static/js/main.1db2751a.js.map",
     "787.41f12221.chunk.js.map": "/static/js/787.41f12221.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ace9898c.css",
-    "static/js/main.8d3a0d31.js"
+    "static/js/main.1db2751a.js"
   ]
 }
