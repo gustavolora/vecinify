@@ -18,9 +18,6 @@ from rest_framework.permissions import IsAuthenticated
 from django.utils import timezone
 
 
-
-
-
 # Handler error for 404 and 500 error
 def handler404notfound(request, exc):
     return render(request, '404.html' ,{'exception':exc }, status=404)
@@ -42,15 +39,24 @@ class Handler500view(TemplateView):
 
 
 class DeliveryHistoryView(viewsets.ModelViewSet):
+    """ 
+
+    Vista para poder consultar y listar el historial de pedidos realizados
+    esta vista es de solo lectura
+    Metodos soportados:
+    - GET: Consultar el historial de pedidos
+    
+    """
     serializer_class = DeliveryHistorySerializer
     queryset = DeliveryHistory.objects.all()
     #queryset = DeliveryHistory.objects.all()
-    http_method_names = ['get', 'patch', 'post', 'put']
+    http_method_names = ['get']
 
 
 
 class CustomLoginView(ObtainAuthToken):
     """
+
     Vista personalizada para el inicio de sesión de usuarios.
 
     Esta vista personalizada se utiliza para autenticar a los usuarios y generar un token de autenticación.
@@ -61,7 +67,9 @@ class CustomLoginView(ObtainAuthToken):
 
     def post(self, request, *args, **kwargs):
         """
+
         Iniciar sesión y obtener un token de autenticación.
+        Para poder realizar peticiones
 
         :param request: La solicitud HTTP.
         :type request: HttpRequest
@@ -80,6 +88,7 @@ class CustomLoginView(ObtainAuthToken):
 
 class OrderView(viewsets.ModelViewSet):
     """
+
     Vista para gestionar ordenes.
 
     Esta vista permite realizar operaciones CRU (Crear, Leer, Actualizar) en usuarios.
@@ -88,6 +97,7 @@ class OrderView(viewsets.ModelViewSet):
     - GET: Obtener la lista de usuarios.
     - POST: Crear un nuevo usuario.
     - PUT/PATCH: Actualizar un usuario existente.
+    
     """
 
     @action(detail=True, methods=['post'])
@@ -166,14 +176,15 @@ class OrderView(viewsets.ModelViewSet):
 
 class UserView(viewsets.ModelViewSet):
     """
+
     Vista para gestionar usuarios.
 
     Esta vista permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en usuarios.
 
     Métodos permitidos:
     - GET: Obtener la lista de usuarios.
-    - POST: Crear un nuevo usuario.
-    - PUTusuario existente.
+    - PATCH: Crear un nuevo usuario.
+    - PUT: usuario existente.
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -182,6 +193,7 @@ class UserView(viewsets.ModelViewSet):
 
 class StoreView(viewsets.ModelViewSet):
     """
+
     Vista para gestionar tiendas.
 
     Esta vista permite realizar operaciones CRUD en tiendas.
@@ -199,6 +211,7 @@ class StoreView(viewsets.ModelViewSet):
 
 class ProductView(viewsets.ModelViewSet):
     """
+
     Vista para gestionar productos.
 
     Esta vista permite realizar operaciones CRUD en productos. Requiere autenticación.
@@ -207,8 +220,7 @@ class ProductView(viewsets.ModelViewSet):
     - GET: Obtener la lista de productos.
     - POST: Crear un nuevo producto.
     - PUT/PATCH: Actualizar un producto existente.
-    - DELETE: Eliminar un producto.
-
+    
     """
     authentication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticated]
@@ -219,9 +231,11 @@ class ProductView(viewsets.ModelViewSet):
 
 class UserRegistrationView(generics.CreateAPIView):
     """
+
     Vista para registrar nuevos usuarios.
 
-    Esta vista permite a los usuarios registrarse proporcionando su nombre de usuario, correo electrónico y contraseña.
+    Esta vista permite a los usuarios registrarse proporcionando 
+    su nombre de usuario, correo electrónico y contraseña.
 
     Métodos permitidos:
     - POST: Crear un nuevo usuario.
@@ -249,6 +263,7 @@ class DeliveryPersonView(viewsets.ModelViewSet):
 
 class OrderHistoryView(viewsets.ModelViewSet):
     """
+
     Vista para gestionar historial de pedidos.
 
     Esta vista permite realizar operaciones CRUD en el historial de pedidos.
