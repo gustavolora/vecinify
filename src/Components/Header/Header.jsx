@@ -49,7 +49,7 @@ export const Header = () => {
                         <StyledLi><StyleNavLink to='/'>inicio</StyleNavLink></StyledLi>
                         <StyledLi><StyleNavLink to='/quienesSomos'>Quines somos</StyleNavLink></StyledLi>
                         <StyledLi><StyleNavLink>Tiendas</StyleNavLink></StyledLi>
-                        <StyledLi><StyleNavLink>Productos</StyleNavLink></StyledLi>
+                        <StyledLi><StyleNavLink to='/productos'>Productos</StyleNavLink></StyledLi>
                         <StyledLi><StyleNavLink>Catalogo</StyleNavLink></StyledLi>
                     </StyleUl>
                 </StyledHeaderNav>

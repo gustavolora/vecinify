@@ -9,6 +9,7 @@ import { ProductosProvider } from "./Context/ProductosProvaider";
 import { CarroComprasProvaider } from "./Context/CarroComprasProvaider";
 import { QuienesSomos } from "./Pages/QuienesSomos";
 import { Footer } from "./Components/Footer/Footer";
+import { Productos } from "./Pages/Productos";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/quienesSomos" element={<QuienesSomos />} />
+            <Route path="/productos" element={<Productos />} />
             <Route path="/carroCompras" element={<CarritoCompras />} />
           </Routes>
           <Footer/>

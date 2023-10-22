@@ -1,45 +1,42 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Card } from '../Card/Card'
-import styled from 'styled-components'
 import { ProductosContext } from '../../Context/ProductosContext'
 import { CarroComprasContext } from '../../Context/CarroComprasContext'
+import { StyleCards, StyleContainerProductos, StyleEncabezado, StyleTitulo, StyleVerMas } from '../UI/Productos'
 
-const StyleContainerProductos = styled.div`
-    padding: 25px 0;
-    display: flex;
-    flex-direction: column;
-    
-`
-const StyleTitulo = styled.h2`
-    margin-bottom: 16px;
-    text-align: center;
-`
-const StyleCards = styled.div`
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-`
+
+
+
 
 export const Productos = () => {
 
     const { productos } = useContext(ProductosContext)
-    const {  listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
+    const { listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
 
-    const handleAgregar = (compra) =>{
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const limiteProductos = productos.slice(0, 5)
+        setItems(limiteProductos)
+    }, [])
+
+    const handleAgregar = (compra) => {
         agregarProducto(compra)
     }
-    const handleEliminar = (id) =>{
+    const handleEliminar = (id) => {
         eliminarProducto(id)
     }
     return (
         <>
             <StyleContainerProductos>
+                <StyleEncabezado>
                 <StyleTitulo>Productos</StyleTitulo>
+                <StyleVerMas to='/productos'>Ver más</StyleVerMas>
+                </StyleEncabezado>
+                
                 <StyleCards>
                     {
-                        productos.map((producto) => {
+                        items.map((producto) => {
                             return (
                                 <Card
                                     key={producto.id}
