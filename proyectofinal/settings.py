@@ -77,6 +77,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proyectofinal.wsgi.application'
 
+# TRUSTED ORIGINS AND CORS CONFIGURATION
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_HTTPONLY = True
+
+CORS_ALLOW_ALL_ORIGINS = False
+
+CSRF_TRUSTED_ORIGINS = ['https://api.vecinify.shop']
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -84,10 +97,10 @@ WSGI_APPLICATION = 'proyectofinal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'vecinify',
         'HOST':'localhost',
-        'USER':'postgres',
-        'PASSWORD':'3126114451',
+        'USER':'vecinifyuser',
+        'PASSWORD':'34R_ps62wJ,2k£-',
         'PORT':'5432'
     }
 }
@@ -120,8 +133,10 @@ REST_FRAMEWORK = {
 # CORS HEADERS 
 CORS_ALLOWED_ORIGINS = [
  
-    "http://localhost:3000",
-
+    "http://vecinify.shop",
+    "https://www.vecinify.shop",
+    "http://www.vecinify.shop",
+    "https://vecinify.shop",
 ]
 
 # Internationalization
@@ -139,7 +154,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Media Files
 MEDIA_URL = '/media/'
