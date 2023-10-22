@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.ace9898c.css",
-    "main.js": "/static/js/main.d8288800.js",
+    "main.js": "/static/js/main.08d8b57a.js",
     "static/js/787.41f12221.chunk.js": "/static/js/787.41f12221.chunk.js",
     "static/media/cocaCola.jpg": "/static/media/cocaCola.cd5ce5169bd0d5e85a97.jpg",
     "static/media/logoVecinify.png": "/static/media/logoVecinify.3aea4c8c2d36fd644daa.png",
     "static/media/buchanans.jpg": "/static/media/buchanans.3a48b3866209b90fc717.jpg",
     "index.html": "/index.html",
     "main.ace9898c.css.map": "/static/css/main.ace9898c.css.map",
-    "main.d8288800.js.map": "/static/js/main.d8288800.js.map",
+    "main.08d8b57a.js.map": "/static/js/main.08d8b57a.js.map",
     "787.41f12221.chunk.js.map": "/static/js/787.41f12221.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ace9898c.css",
-    "static/js/main.d8288800.js"
+    "static/js/main.08d8b57a.js"
   ]
 }

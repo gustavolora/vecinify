@@ -1,15 +1,16 @@
 import React from 'react'
-import { StyleForm, StyleSpan, StyleBtnSubmit, StyleLegend, StyleBtn, StyleCampoInput } from '../UI'
+import { StyleForm, StyleSpan, StyleBtnSubmit, StyleLegend, StyleBtn, StyleCampoInput, StyleLink   } from '../UI'
 import { useForm } from '../../Hooks/useForm'
 import { clientServices } from '../../services/services-client'
 import { useNavigate } from 'react-router-dom'
 
+
 export const FormularioLogin = () => {
-  const navigate = useNavigate()
   const valorInicial = {
     usuario: "",
     contrasena: ""
   }
+  const navigate = useNavigate()
 
   const { formState, onChangeCampo} = useForm(valorInicial)
   const { usuario, contrasena } = formState
@@ -21,7 +22,7 @@ export const FormularioLogin = () => {
       users.forEach(({password, username}) => {
         if (password === contrasena && username === usuario) {
           console.log("Login exitoso")
-          navigate("/activo")
+          navigate('/')
         }else{
           console.log("Acceso denegado")
         }
@@ -36,7 +37,7 @@ export const FormularioLogin = () => {
           <StyleCampoInput name='usuario' value={usuario} type="text" placeholder="Escriba su usuario" onChange={onChangeCampo}/>
           <StyleCampoInput name='contrasena' value={contrasena} type="password" placeholder="Escriba su contraseña" onChange={onChangeCampo}/>
           <StyleBtnSubmit>Inciar sesión</StyleBtnSubmit>
-          <StyleSpan>¿No tienes una cuenta aún? <StyleBtn href='/register'>Crear cuenta</StyleBtn></StyleSpan>
+          <StyleSpan>¿No tienes una cuenta aún? <StyleLink to='/register'>Crear cuenta</StyleLink></StyleSpan>
         </StyleForm>
     </>
   )

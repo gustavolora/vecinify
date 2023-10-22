@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import Colors from "./Colores";
+const {colorPrimario, colorSecundario} = Colors
 
 
 //Estilos  formularios
@@ -8,6 +11,17 @@ export const ContainerForm = styled.div`
     height: auto;
     align-items: center;
     justify-content: center;
+    @media (min-width: 360px) and (max-width:768px){
+        padding: 10px 10px;
+    }
+
+`
+export const StyleNavLink = styled(NavLink)`
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
 
 `
 export const StyleForm = styled.form`
@@ -15,15 +29,19 @@ export const StyleForm = styled.form`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 60px 30px;
-    width: 453px;
+    padding: 40px 30px;
+    width: 400px;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 5px 5px 40px #56BBE5;
+    box-shadow: 5px 5px 40px #bfe0e2;
+    @media (min-width: 360px)and (max-width:768px){
+        padding: 10px 10px;
+    }
 `
 export const StyleLegend = styled.legend`
     margin-bottom: 30px;
     color: #59B1EA;
+    text-align: center;
     font-weight: 700;
     font-size: 20px;
 `
@@ -36,6 +54,9 @@ export const StyleCampoInput = styled.input`
     outline: none;
     padding: 5px;
     box-sizing: border-box;
+    @media (min-width: 360px)and (max-width:768px){
+       font-size: 14px;
+    }
 `
 export const StyledListaCategoria = styled.select`
     width: 100%;
@@ -43,6 +64,9 @@ export const StyledListaCategoria = styled.select`
     border: none;
     outline: none;
     border-bottom: 1px solid #cccccc;
+    @media (min-width: 360px)and (max-width:768px){
+       font-size: 14px;
+    }
 `
 
 export const StyleCheckbox = styled.div`
@@ -62,6 +86,7 @@ export const StyleBtn = styled.a`
     border: none;
     height: 50px;
     width: 100%;
+    
 `
 export const StyleBtnSubmit = styled.button`
     background: #59B1EA;
@@ -72,6 +97,9 @@ export const StyleBtnSubmit = styled.button`
     padding: 5px;
     height: 50px;
     width: 100%;
+    @media (min-width: 360px)and (max-width:768px){
+       font-size: 14px;
+    }
 `
 export const StyleSpan = styled.span`
     width: 100%;
@@ -79,10 +107,10 @@ export const StyleSpan = styled.span`
     padding: 15px 0;
     color: #59B1EA;
 `
-
-//estilos footer
-export const Footer = styled.footer`
-    background: #59B1EA;
-    height: 20vh;
-
+export const StyleLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colorPrimario};
+    font-weight: 700;
+`
+export const Link = styled(NavLink)`
 `

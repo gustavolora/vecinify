@@ -1,38 +1,59 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Card } from '../Card/Card'
+import { ProductosContext } from '../../Context/ProductosContext'
+import { CarroComprasContext } from '../../Context/CarroComprasContext'
+import { StyleCards, StyleContainerProductos, StyleEncabezado, StyleTitulo, StyleVerMas } from '../UI/Productos'
 
-import styled from 'styled-components'
 
-const StyleContainerProductos = styled.div`
-    padding: 25px 0;
-    
-`
-const StyleTitulo = styled.h2`
-    margin-bottom: 16px;
-`
-const StyleCards = styled.div`
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-`
+
+
 
 export const Productos = () => {
-  return (
-    <>
-        <StyleContainerProductos>
-            <StyleTitulo>Productos</StyleTitulo>
-            <StyleCards>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                
-               
-            </StyleCards>
-        </StyleContainerProductos>
 
-    </>
-  )
+    const { productos } = useContext(ProductosContext)
+    const { listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
+
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const limiteProductos = productos.slice(0, 5)
+        setItems(limiteProductos)
+    }, [])
+
+    const handleAgregar = (compra) => {
+        agregarProducto(compra)
+    }
+    const handleEliminar = (id) => {
+        eliminarProducto(id)
+    }
+    return (
+        <>
+            <StyleContainerProductos>
+                <StyleEncabezado>
+                <StyleTitulo>Productos</StyleTitulo>
+                <StyleVerMas to='/productos'>Ver más</StyleVerMas>
+                </StyleEncabezado>
+                
+                <StyleCards>
+                    {
+                        items.map((producto) => {
+                            return (
+                                <Card
+                                    key={producto.id}
+                                    imagen={producto.image}
+                                    nombre={producto.title}
+                                    precio={producto.price}
+                                    handleAgregar={() => handleAgregar(producto)}
+                                    handleEliminar={() => handleEliminar(producto.id)}
+                                />
+                            )
+                        })
+                    }
+
+
+                </StyleCards>
+            </StyleContainerProductos>
+
+        </>
+    )
 }

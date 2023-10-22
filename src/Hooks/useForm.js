@@ -11,9 +11,13 @@ export const useForm = (valorInicial = {}) => {
             [name]: value
         })
     }
+    const limpiarInputs = () =>{
+      setFormState(valorInicial)
+    }
 
   return {
     formState,
+    limpiarInputs,
     onChangeCampo
   }
 }
