@@ -6,8 +6,8 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.authtoken.models import Token
 from rest_framework import viewsets
-from .serializers import StoreSerializer, ProductSerializers, DeliveryPersonSerializer, UserRegistrationSerializer, OrderHistorySerializer, UserSerializer, OrderSerializer, DeliveryHistorySerializer
-from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory
+from .serializers import *
+from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory, OrderItem
 from django.contrib.auth.models import User
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
@@ -35,8 +35,25 @@ class Handler500view(TemplateView):
             return r
         return view
 
+class CategoryView(viewsets.ModelViewSet):
+    """
+    
+    Vista personalizada la cual permite ver la categoria de los productos
+    Metodos soportados:
+    - GET: permite visualizar todas las categorias
+    - POST: permite agregar categorias nuevas
+    - PUT: Permite actualizar una categoria existente
+    - PATCH: Permite actualizar una categoria existente
+    """
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
+    http_method_names = ['get','post','put' 'patch']
 
 
+class OrderItemView(viewsets.ModelViewSet):
+    serializer_class = OrderItemSerializer
+    queryset = OrderItem.objects.all()
+    http_method_names = ['get', 'post', 'put', 'patch', 'delete']
 
 class DeliveryHistoryView(viewsets.ModelViewSet):
     """ 
@@ -86,19 +103,14 @@ class CustomLoginView(ObtainAuthToken):
         return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
+
+
 class OrderView(viewsets.ModelViewSet):
-    """
-
-    Vista para gestionar ordenes.
-
-    Esta vista permite realizar operaciones CRU (Crear, Leer, Actualizar) en usuarios.
-
-    Métodos permitidos:
-    - GET: Obtener la lista de usuarios.
-    - POST: Crear un nuevo usuario.
-    - PUT/PATCH: Actualizar un usuario existente.
-    
-    """
+    serializer_class = OrderSerializer
+    queryset = Order.objects.all()
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['get', 'post', 'put', 'patch', 'delete']
 
     @action(detail=True, methods=['post'])
     def assign_delivery_person(self, request, pk=None):
@@ -107,7 +119,6 @@ class OrderView(viewsets.ModelViewSet):
             order.delivery_person = request.user.delivery_person
             order.status = 'preparando'
             order.save()
-
             serializer = OrderSerializer(order)
             return Response(serializer.data)
 
@@ -117,23 +128,15 @@ class OrderView(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             order = serializer.save()
-            
-            order_history_data = {
-                'order': order.id,
-                'user': request.user.id,  
-                'date': timezone.now()  
-            }
-            delivery_person = order.delivery_person
-            if delivery_person:
-                order_history_data['delivery_person'] = delivery_person.id
-            order_history_serializer = OrderHistorySerializer(data=order_history_data)
-            if order_history_serializer.is_valid():
-                order_history_serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            else:
-                return Response(order_history_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            order_items_data = self.request.data.get('order_items', [])
+
+            for item_data in order_items_data:
+                item_data['order'] = order.id
+                OrderItem.objects.create(**item_data)
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
     @action(detail=True, methods=['post'])
     def update_order_status(self, request, pk=None):
         order = self.get_object()
@@ -166,12 +169,6 @@ class OrderView(viewsets.ModelViewSet):
                 return Response({'error': 'La orden no está en estado pendiente'}, status=status.HTTP_BAD_REQUEST)
         else:
             return Response({'error': 'Estado no válido'}, status=status.HTTP_BAD_REQUEST)
-        
-    authentication_classes = [SessionAuthentication]
-    permission_classes = [IsAuthenticated]
-    serializer_class = OrderSerializer
-    queryset = Order.objects.all()
-    http_method_names = ['get', 'patch', 'post', 'put']
 
 
 class UserView(viewsets.ModelViewSet):
@@ -185,6 +182,7 @@ class UserView(viewsets.ModelViewSet):
     - GET: Obtener la lista de usuarios.
     - PATCH: Crear un nuevo usuario.
     - PUT: usuario existente.
+
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()

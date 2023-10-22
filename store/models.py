@@ -21,10 +21,19 @@ class Store(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
     address = models.TextField()
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+                              on_delete=models.CASCADE)
 
     def __str__(self):
         return "Tienda: {}  Dueño: {}".format(self.name, self.owner)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     """
@@ -47,6 +56,8 @@ class Product(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     picture = models.ImageField(upload_to='products/', null=True, blank=True)
     quantity = models.PositiveIntegerField(default=0)
+    categories = models.ManyToManyField(Category)
+
     def __str__(self) -> str:
         return '{}'.format(self.name)
 
@@ -69,17 +80,19 @@ class DeliveryPerson(models.Model):
     phone_number = models.CharField(max_length=15)
     available = models.BooleanField()
     address = models.TextField(null=True)
-    identification = models.CharField(max_length=20,null=True)  # Puedes ajustar la longitud según tus necesidades.
-    profile_picture = models.ImageField(upload_to='delivery_persons/', null=True, blank=True)
+    # Puedes ajustar la longitud según tus necesidades.
+    identification = models.CharField(max_length=20, null=True)
+    profile_picture = models.ImageField(
+        upload_to='delivery_persons/', null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
 
+class OrderItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField() 
 
 
-
-
-    
 class Order(models.Model):
     """
     Modelo para representar un pedido en tu aplicación.
@@ -104,12 +117,15 @@ class Order(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES)
-    delivery_person = models.ForeignKey(DeliveryPerson, on_delete=models.SET_NULL, null=True, blank=True)
-    total = models.DecimalField(null = True,max_digits=10, decimal_places=2)
-    
+    delivery_person = models.ForeignKey(
+        DeliveryPerson, on_delete=models.SET_NULL, null=True, blank=True)
+    total = models.DecimalField(null=True, max_digits=10, decimal_places=2)
+
+
 class OrderHistory(models.Model):
     """
     Modelo para representar el historial de pedidos en tu aplicación.
@@ -119,13 +135,16 @@ class OrderHistory(models.Model):
     - user (ForeignKey a settings.AUTH_USER_MODEL): El usuario relacionado con el historial.
     - delivery_person (ForeignKey a DeliveryPerson): El repartidor asignado al pedido.
     - date (DateTimeField): La fecha y hora del historial.
-   
+
     """
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    delivery_person = models.ForeignKey(DeliveryPerson, on_delete=models.CASCADE)
+    delivery_person = models.ForeignKey(
+        DeliveryPerson, on_delete=models.CASCADE)
     date = models.DateTimeField()
-    status = models.CharField(null=True,max_length=15, choices=Order.STATUS_CHOICES)
+    status = models.CharField(null=True, max_length=15,
+                              choices=Order.STATUS_CHOICES)
+
 
 class DeliveryHistory(models.Model):
     """
@@ -148,6 +167,7 @@ class DeliveryHistory(models.Model):
 
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    delivery_person = models.ForeignKey(DeliveryPerson, on_delete=models.CASCADE)
+    delivery_person = models.ForeignKey(
+        DeliveryPerson, on_delete=models.CASCADE)
     date = models.DateTimeField()
     status = models.CharField(max_length=15, choices=STATUS_CHOICES)
