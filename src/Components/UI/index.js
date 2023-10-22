@@ -8,8 +8,8 @@ const {colorPrimario, colorSecundario} = Colors
 export const ContainerForm = styled.div`
     width: 100%;
     display: flex;
-    height: auto;
-    align-items: center;
+    height: 100vh;
+    align-items: flex-start;
     justify-content: center;
     @media (min-width: 360px) and (max-width:768px){
         padding: 10px 10px;

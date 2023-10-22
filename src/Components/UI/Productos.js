@@ -12,11 +12,25 @@ export const StyleEncabezado = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+    @media (min-width:360px) and (max-width:768px){
+        padding: 10px 10px;
+    }
+    @media (min-width:769px){
+        padding: 10px 20px;
+    }
+    @media (min-width:1041px){
+        padding: 10px 0;
+    }
+    
 `
 export const StyleTitulo = styled.h4`
     margin: 0;
     font-size: 16px;
 
+`
+export const StyleTituloProductos = styled.h4`
+    text-align: center;
+    padding: 20px 0;
 `
 export const StyleVerMas = styled(NavLink)`
     text-decoration: none;
