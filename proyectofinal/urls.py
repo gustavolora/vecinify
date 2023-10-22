@@ -6,7 +6,7 @@ from store.views import Handler500view, handler404notfound
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', include('store.urls')),
+    path('', include('store.urls')),
 
 ]
 

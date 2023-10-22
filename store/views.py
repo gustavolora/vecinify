@@ -7,7 +7,7 @@ from rest_framework.decorators import action
 from rest_framework.authtoken.models import Token
 from rest_framework import viewsets
 from .serializers import *
-from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory
+from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory, OrderItem
 from django.contrib.auth.models import User
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
@@ -48,6 +48,7 @@ class CategoryView(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
     http_method_names = ['get','post','put' 'patch']
+
 
 class OrderItemView(viewsets.ModelViewSet):
     serializer_class = OrderItemSerializer
@@ -102,15 +103,7 @@ class CustomLoginView(ObtainAuthToken):
         return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-from rest_framework import viewsets
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework import status
-from .models import Order, OrderItem
-from .serializers import OrderSerializer, OrderItemSerializer
-from .permissions import IsOwnerOrReadOnly
-from rest_framework.authentication import SessionAuthentication
-from rest_framework.permissions import IsAuthenticated
+
 
 class OrderView(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
@@ -189,7 +182,7 @@ class UserView(viewsets.ModelViewSet):
     - GET: Obtener la lista de usuarios.
     - PATCH: Crear un nuevo usuario.
     - PUT: usuario existente.
-    
+
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()

@@ -15,6 +15,7 @@ router.register('OrderHistory', views.OrderHistoryView)
 router.register('User', views.UserView)
 router.register('Order',views.OrderView)
 router.register('DeliveryHistory',views.DeliveryHistoryView)
+router.register('Category', views.CategoryView)
 
 urlpatterns = [
         path('api/v1/',include(router.urls), name="api-v1"),
