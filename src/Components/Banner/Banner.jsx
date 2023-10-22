@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import imgCocaCola from '../../Assets/img/banner/cocaCola.jpg'
 import imgLacteos from '../../Assets/img/banner/productos-lacteos.jpeg'
-import imgGranos from '../../Assets/img/banner/baner-granos.jpg'
-import imgEnlatados from '../../Assets/img/banner/baner-enlatados.jpg'
+import imgGranos from '../../Assets/img/banner/baner-granos.png'
+import imgEnlatados from '../../Assets/img/banner/baner-enlatados.png'
 
 
 const StyleBaner = styled.div`
