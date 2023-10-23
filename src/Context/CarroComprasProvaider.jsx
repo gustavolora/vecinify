@@ -1,10 +1,12 @@
 import React, { useReducer } from 'react'
 import { CarroComprasContext } from './CarroComprasContext'
 
+// Creamos un arreglo vacío para almacenar productos en el carrito de compras
 const valorInicial = []
 
 export const CarroComprasProvaider = ({ children }) => {
-
+    //Aquí se creo 5 funciones flechas para manejar la interaccion con el carro de compras el cual lleva el type que se identifica la que se va a hacer 
+    // Función para agregar un producto al carrito de compras
     const agregarProducto = (compra) => {
         compra.cantidad = 1
         const action = {
@@ -13,6 +15,7 @@ export const CarroComprasProvaider = ({ children }) => {
         }
         dispatch(action)
     }
+    // Función para eliminar un producto del carrito de compras por su id
     const eliminarProducto = (id) => {
         const action = {
             type: '[CARRITO] Eliminar producto',
@@ -20,6 +23,7 @@ export const CarroComprasProvaider = ({ children }) => {
         }
         dispatch(action)
     }
+    // Función para aumentar la cantidad de un producto en el carrito por su id
     const aumentarProducto = (id) => {
         const action = {
             type: '[CARRITO] Aumentar producto',
@@ -27,6 +31,7 @@ export const CarroComprasProvaider = ({ children }) => {
         }
         dispatch(action)
     }
+    // Función para disminuir la cantidad de un producto en el carrito por su id
     const disminuirProducto = (id) => {
         const action = {
             type: '[CARRITO] Disminuir producto',
@@ -34,6 +39,7 @@ export const CarroComprasProvaider = ({ children }) => {
         }
         dispatch(action)
     }
+    // Función para eliminar todos los productos del carrito
     const eliminarProductos = () => {
         const action = {
             type: '[CARRITO] Eliminar productos',
@@ -42,6 +48,7 @@ export const CarroComprasProvaider = ({ children }) => {
         dispatch(action)
     }
 
+    // La función comprasReducer maneja los cambios en el estado del carrito de compras
     const comprasReduces = (state = valorInicial, action = {}) => {
         switch (action.type) {
             case '[CARRITO] Agregar producto':
@@ -51,7 +58,7 @@ export const CarroComprasProvaider = ({ children }) => {
             case '[CARRITO] Aumentar producto':
                 return state.map(item => {
                     const cant = item.cantidad + 1
-                    if (item.id === action.payload) return {...item, cantidad: cant }
+                    if (item.id === action.payload) return { ...item, cantidad: cant }
                     return item
                 })
             case '[CARRITO] Disminuir producto':
@@ -68,11 +75,12 @@ export const CarroComprasProvaider = ({ children }) => {
         }
     }
 
+    // Usamos el hook useReducer para manejar el estado del carrito de compras
     const [listaCompra, dispatch] = useReducer(comprasReduces, valorInicial)
 
-
+    // Proporcionamos el contexto con los datos del carrito y las funciones
     return (
-        <CarroComprasContext.Provider value={{ listaCompra, agregarProducto, eliminarProducto, aumentarProducto, disminuirProducto, eliminarProductos}}>
+        <CarroComprasContext.Provider value={{ listaCompra, agregarProducto, eliminarProducto, aumentarProducto, disminuirProducto, eliminarProductos }}>
             {children}
         </CarroComprasContext.Provider>
     )

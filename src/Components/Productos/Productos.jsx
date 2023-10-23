@@ -11,25 +11,13 @@ import { StyleCards, StyleContainerProductos, StyleEncabezado, StyleTitulo, Styl
 export const Productos = () => {
 
     const { productos } = useContext(ProductosContext)
-    const { listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
-    const [lista, setLista] = useState([])
-
+    const { agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
     const [items, setItems] = useState([])
 
     useEffect(() => {
         const limiteProductos = productos.slice(0, 5)
         setItems(limiteProductos)
     }, [])
-
-    // const productosGet = async () => {
-    //     const response = await fetch("https://api.vecinify.shop/api/v1/Product/")
-    //     const data = await response.json()
-    //     console.log(data)
-    //     setLista(data)
-    // }
-    // useEffect(()=>{
-    //     productosGet()
-    // },[])
 
     const handleAgregar = (compra) => {
         agregarProducto(compra)
@@ -45,7 +33,7 @@ export const Productos = () => {
                 <StyleTitulo>Productos</StyleTitulo>
                 <StyleVerMas to='/productos'>Ver más</StyleVerMas>
                 </StyleEncabezado>
-                
+                {/* AL componente Card enviamos los valores para utilizarlo en el componente Card*/}
                 <StyleCards>
                     {
                         items.map((producto) => {

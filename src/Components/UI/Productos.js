@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom'
 
 export const StyleContainerProductos = styled.div`
-    padding: 25px 0;
+    margin-top: 50px;
     display: flex;
+    
     flex-direction: column;
     
 `
@@ -19,7 +20,7 @@ export const StyleEncabezado = styled.div`
         padding: 10px 20px;
     }
     @media (min-width:1041px){
-        padding: 10px 0;
+        padding: 30px 0;
     }
     
 `

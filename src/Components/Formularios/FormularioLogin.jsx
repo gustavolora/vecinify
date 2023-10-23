@@ -12,19 +12,21 @@ export const FormularioLogin = () => {
   }
   const navigate = useNavigate()
 
+  //Utilizamo nuestro hook personalizado y le pasamos el valor inicial
   const { formState, onChangeCampo} = useForm(valorInicial)
   const { usuario, contrasena } = formState
 
   const onSubmit = (e) =>{
     e.preventDefault()
-
+    //Llamamos a nuestro servio login para verificar que los datos ingresado si existan en la base de datos
     clientServices.Login().then((users) =>{
       users.forEach(({password, username}) => {
+        //Hacemos la verificación y si es correcta no redirige al inicio de lo contrario nos mostrara un mensaje
         if (password === contrasena && username === usuario) {
-          console.log("Login exitoso")
+          alert("Login exitoso")
           navigate('/')
         }else{
-          console.log("Acceso denegado")
+          console.log("Contraseña o usuario incorrectos")
         }
       });
     })

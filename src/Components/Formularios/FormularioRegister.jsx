@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { StyleForm, StyleSpan, StyleBtnSubmit, StyleLegend, StyleCheckbox, StyleCampoInput, StyleBtn, StyleLink, Link } from '../UI'
+import React, { useState } from 'react'
+import { StyleForm, StyleSpan, StyleBtnSubmit, StyleLegend, StyleCheckbox, StyleCampoInput, StyleLink } from '../UI'
 import { ListaCategoria } from './ListaCategoria'
 import { useForm } from '../../Hooks/useForm'
-import { FormularioTienda } from './FormularioTienda'
 
 export const FormularioRegister = () => {
-  const valorCliente = {
+  //Valor inicial del usuario que se va a registrar
+  const valorInitial = {
     nombre: "",
     apellido: "",
     identificacion: "",
@@ -16,14 +16,24 @@ export const FormularioRegister = () => {
     direccion: "",
     dueno: ""
   }
+
+  //Guardamos el estado de la categoria y del checkbox
   const [categoria, setCategoria] = useState("")
   const [checkbox, setCheckbox] = useState(false)
 
-  const { formState, limpiarInputs, onChangeCampo } = useForm(valorCliente)
+  //Utilizamos nuestro hook personalizado y se le pasa el estado inicial
+  const { formState, limpiarInputs, onChangeCampo } = useForm(valorInitial)
   const { nombre, apellido, usuario, password, confirmacionPassword, nombreTienda, direccion, dueno } = formState
+
+  //En la función onSubmit verifica la contraseña y que categoria no este vacio
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(formState)
+    if(password === confirmacionPassword && categoria === !""){
+      console.log(formState)
+    }else{
+      alert("Ocurrio un error, verifica los campos")
+    }
+    
     limpiarInputs()
   }
 
@@ -33,7 +43,7 @@ export const FormularioRegister = () => {
         <StyleLegend>Registrarse</StyleLegend>
         <StyleCampoInput type="text" value={nombre} name='nombre' placeholder="Escriba su nombre" onChange={onChangeCampo} required />
         <StyleCampoInput type="text" value={apellido} name='apellido' placeholder="Escriba su apellido" onChange={onChangeCampo} required />
-        <ListaCategoria cambio={setCategoria} />
+        <ListaCategoria cambio={setCategoria} required />
         <StyleCampoInput type="text" value={usuario} name='usuario' placeholder="Escriba su usuario" onChange={onChangeCampo} required />
         <StyleCampoInput type="password" value={password} name='password' placeholder="Escriba su contraseña" onChange={onChangeCampo} required />
         <StyleCampoInput type="password" value={confirmacionPassword} name='confirmacionPassword' placeholder="Confirmación de contraseña" onChange={onChangeCampo} required />
@@ -48,7 +58,7 @@ export const FormularioRegister = () => {
         }
         <StyleCheckbox>
           <input type='checkbox' required onClick={(e) => setCheckbox(e.target.checked)} />
-          <label >Acepta terminos y condiciones</label>
+          <StyleLink to='teminos' >Acepta terminos y condiciones</StyleLink>
         </StyleCheckbox>
         <StyleBtnSubmit>Registrarse</StyleBtnSubmit>
         <StyleSpan>¿Ya tienes cuenta? <StyleLink to='/login'>Iniciar sesión</StyleLink></StyleSpan>

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Colors from '../UI/Colores'
-import { StyleLogo } from '../UI/StyleHeader'
 import imgLogo from '../../Assets/img/logoVecinifySinFondo.png'
 
 const { colorPrimario, colorSecundario } = Colors
@@ -10,12 +9,18 @@ const StyleContainerFooter = styled.footer`
     height: 20vh;
     background: #64b6ec;
     display: flex;
+    margin-top: 50px;
     justify-content: center;
+
+`
+const StyleInfoFooter = styled.div`
+    display: flex;
+    align-items: center;
 `
 const StyleImgLogo = styled.img`
     width: 40px;
 `
-const StyleH2 = styled.h5`
+const StyleH5 = styled.h5`
     color: white;
     margin: 0;
 `
@@ -23,10 +28,10 @@ export const Footer = () => {
     return (
         <>
             <StyleContainerFooter>
-                <StyleLogo>
+                <StyleInfoFooter>
                     <StyleImgLogo src={imgLogo} />
-                    <StyleH2>Vecinify</StyleH2>
-                </StyleLogo>
+                    <StyleH5>Vecinify</StyleH5>
+                </StyleInfoFooter>
             </StyleContainerFooter>
         </>
     )

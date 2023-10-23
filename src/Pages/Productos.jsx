@@ -6,8 +6,12 @@ import { Card } from '../Components/Card/Card'
 
 export const Productos = () => {
 
+    // Obtenemos la lista de productos desde el contexto
     const { productos } = useContext(ProductosContext)
-    const { listaCompra, agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
+    // Obtenemos las funciones agregar y eliminar producto del context carro compras
+    const { agregarProducto, eliminarProducto } = useContext(CarroComprasContext)
+
+    //Estas funciones manejan el agregar y elimanar producto
     const handleAgregar = (compra) => {
         agregarProducto(compra)
     }
@@ -21,6 +25,7 @@ export const Productos = () => {
                     <StyleTituloProductos>Productos</StyleTituloProductos>
                 <StyleCards>
                     {
+                        // Mapeamos los productos para renderizar la información de cada producto
                         productos.map((producto) => {
                             return (
                                 <Card

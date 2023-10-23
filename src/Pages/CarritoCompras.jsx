@@ -115,8 +115,10 @@ const BtnPagar = styled.button`
 
 
 export const CarritoCompras = () => {
-  const { listaCompra, eliminarProducto, aumentarProducto, disminuirProducto, eliminarProductos} = useContext(CarroComprasContext)
+  //Utilizamos la lista de las compras y funciones del context carroCompra
+  const { listaCompra, eliminarProducto, aumentarProducto, disminuirProducto, eliminarProductos } = useContext(CarroComprasContext)
 
+  //Esta función calcula el precio total a pagar de todos los productos agregados 
   const calcularTotal = () => {
     return listaCompra.reduce((total, item) => total + item.price * item.cantidad, 0).toFixed(2)
   }
@@ -124,7 +126,7 @@ export const CarritoCompras = () => {
     alert("Compra exitosa")
     eliminarProductos()
   }
-  
+
 
   return (
     <>
@@ -136,13 +138,16 @@ export const CarritoCompras = () => {
             :
             <StyleContainerCompras>
               {
+                // Mapeamos la lista de compra para renderizar la información de cada producto agregado
+
                 listaCompra.map((item) => {
                   return (
                     <StyleContainerProducto key={item.id}>
                       <StyleImg src={item.image} />
                       <StyleDivInfo>
                         <StyleIcono onClick={() => eliminarProducto(item.id)} src={iconoTrash} />
-                        <p>{item.title.length > 20 ? item.title.substring(0, 20) + "...":item.title}</p>
+                        {/*Aquí hacemos una verificación de que el nombre del producto no supere cierta cantidad de caracteres*/}
+                        <p>{item.title.length > 20 ? item.title.substring(0, 20) + "..." : item.title}</p>
                         <StyleContainerBtns>
                           <StyleBtns>
                             <StyleBtn type='button' onClick={() => disminuirProducto(item.id)}>-</StyleBtn>
