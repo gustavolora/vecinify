@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory
+from .models import Store, Product, DeliveryPerson, OrderHistory, Order, DeliveryHistory, Category, OrderItem
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -9,6 +9,11 @@ class DeliveryHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = DeliveryHistory
         fields= '__all__'
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
 
 
 
@@ -30,6 +35,11 @@ class StoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Store
+        fields = '__all__'
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
         fields = '__all__'
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -54,6 +64,7 @@ class OrderSerializer(serializers.ModelSerializer):
     ```
 
     """
+    order_items = OrderItemSerializer(many=True)
     class Meta:
         model = Order
         fields = '__all__'
