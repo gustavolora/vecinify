@@ -8,19 +8,22 @@ import { ProductosProvider } from "./Context/ProductosProvaider";
 import { CarroComprasProvaider } from "./Context/CarroComprasProvaider";
 import { Footer } from "./Components/Footer/Footer";
 import { Productos } from "./Pages/Productos";
+import { Tiendas } from "./Pages/Tiendas";
 
 function App() {
   return (
     <>
-      <ProductosProvider>
-        <CarroComprasProvaider>
+      <ProductosProvider> {/*Proporciona un contexto para los productos*/}
+        <CarroComprasProvaider> {/*Proporciona un contexto el carro de compras*/}
           <Header></Header>
-          <Routes>
+          <Routes> {/*Configuración de las rutas, ruta inicial y por defecto es '/'*/} 
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/tienda" element={<Tiendas />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/carroCompras" element={<CarritoCompras />} />
+            <Route path="/*" element={<Home />} />
           </Routes>
           <Footer/>
         </CarroComprasProvaider>

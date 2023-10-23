@@ -47,12 +47,7 @@ export const Banner = () => {
     return (
         <>
             <StyleBaner>
-                <StyleImgBannerMovil src={imgGranos}/>
-                <StyleImgBannerTablet src={imgGranos}/>
-                <StyleImgBannerTablet src={imgLacteos}/>
-                <StyleImgBannerPc src={imgEnlatados}/>
-                <StyleImgBannerPc src={imgLacteos}/>
-                <StyleImgBannerPc src={imgGranos}/>
+                
                 
             </StyleBaner>
         </>

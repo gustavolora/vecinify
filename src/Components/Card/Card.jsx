@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import ImgProducto from '../../Assets/img/productos/buchanans.jpg'
 import { StyleProducto, StyleImgProducto, StyleDivInfo, StyleNombre, StylePrecio, StyleContentBtns, StyleBtnComprar, StyleBtnQuitar} from '../UI/Card'
 
 
-
+//destructuramos las props que le enviaron al Card
 export const Card = ({imagen, nombre, precio, handleAgregar, handleEliminar}) => {
 
+    //Utilizamos un useState para manejar el estado de si el producto esta agregado o no esta agregado al carro de compras
     const [agregado, setAgregado] = useState(true)
     const clickAgregar = () =>{
         handleAgregar()

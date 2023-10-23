@@ -36,8 +36,7 @@ export const StyleImgLogo = styled.img`
 
     }
 `
-export const StyleLogo = styled.a`
-    cursor: pointer;
+export const StyleLogo = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -105,10 +104,30 @@ export const StyleCajaBuscar = styled.div`
         display: none;
     }
 `
+export const StyleIBuscar = styled.img`
+    @media (min-width:769px){
+        display: none;
+    }
+`
 export const StyleInputSearch = styled.input`
     outline: none;
     border: none;
     width: 100%;
+`
+export const StyleDiv = styled.div`
+    width: 100%;
+    padding: 5px 15px;
+    @media (min-width:769px){
+        display: none;
+    }
+`
+export const StyleInputSearchMobil = styled.input`
+    width: 100%;
+    border: none;
+    outline: none;
+    background: ${colorSecundario};
+    border-radius: 10px;
+    padding: 2px 5px;
 `
 export const StyledHeaderNav = styled.nav`
     background: #59B1EA;

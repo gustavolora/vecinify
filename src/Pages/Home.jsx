@@ -16,6 +16,7 @@ export const Home = () => {
             <StyleContent>
                 <Banner></Banner>
                 <Productos></Productos>
+               
             </StyleContent>
         </>
     )
